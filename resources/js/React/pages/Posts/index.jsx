@@ -19,12 +19,10 @@ function Posts() {
     }, []);
 
     function fetchData() {
-        // setLoading(true)
         apiPosts
             .index()
             .then((response) => {
                 setPosts(response.data.data);
-                // setLoading(false)
                 setReloadPage(false);
             })
             .catch((err) => toast.error("Algo deu errado!"));
@@ -69,12 +67,20 @@ function Posts() {
                             </Label>
                             <Textarea {...register("content")} />
                         </ItemForm>
-                        <Button color="#62a367" colorFont="#fff" type="submit">Postar</Button>
+                        <Button color="#62a367" colorFont="#fff" type="submit">
+                            Postar
+                        </Button>
                     </form>
                 </ModalComponent>
             )}
             <Card>
-                <Button color="#453357" colorFont="#fff" onClick={(e) => setShow(true)}>Criar Post</Button>
+                <Button
+                    color="#453357"
+                    colorFont="#fff"
+                    onClick={(e) => setShow(true)}
+                >
+                    Criar Post
+                </Button>
 
                 {posts.map((post) => (
                     <Post
