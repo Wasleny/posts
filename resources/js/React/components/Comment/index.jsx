@@ -1,5 +1,6 @@
 import { Button } from "../Post/styles";
 import { CommentStyle } from "./styles";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const Comment = ({ comment, onDeleteComment }) => {
     return (
@@ -11,7 +12,7 @@ const Comment = ({ comment, onDeleteComment }) => {
                     colorFont="#fff"
                     onClick={(e) => onDeleteComment(comment.id)}
                 >
-                    X
+                    <AiOutlineCloseCircle />
                 </Button>
             </CommentStyle>
         </>

@@ -6,6 +6,7 @@ import { Button, Buttons, Content, Line, Title } from "./styles";
 import { useForm } from "react-hook-form";
 import { ItemForm, Label, Textarea } from "@/React/pages/Posts/styles";
 import Comment from "../Comment";
+import { AiOutlinePlusCircle, AiFillDelete } from "react-icons/ai";
 
 const Post = ({ post, onDeletePost, setReloadPage }) => {
     const { register, handleSubmit, resetField } = useForm({
@@ -78,15 +79,25 @@ const Post = ({ post, onDeletePost, setReloadPage }) => {
                     color="#316215"
                     colorFont="#fff"
                     onClick={(e) => setShow(true)}
+                    style={{ display: "flex" }}
                 >
-                    Add Comment
+                    <AiOutlinePlusCircle
+                        style={{ marginTop: "auto", marginRight: "5px" }}
+                        size={20}
+                    />{" "}
+                    Comentário
                 </Button>
                 <Button
                     color="#cc0000"
                     colorFont="#fff"
                     onClick={(e) => onDeletePost(post.id)}
+                    style={{ display: "flex" }}
                 >
-                    Excluir Post
+                    <AiFillDelete
+                        style={{ marginTop: "auto", marginRight: "5px" }}
+                        size={20}
+                    />{" "}
+                    Post
                 </Button>
             </Buttons>
 
